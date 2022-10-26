@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const SingleCourse = ({ course }) => {
-    const { name, img, rating, total_view, _id } = course
+    const { name, img, rating, total_view, _id, price } = course
     return (
         <div className="card rounded-lg card-compact w-96 bg-base-100 shadow-xl mb-5">
             <img className='image-full' src={img} alt="Shoes" />
@@ -18,7 +18,7 @@ const SingleCourse = ({ course }) => {
                     </div>
                     <div className='flex justify-between'>
                         <div>
-                            <h2 className='text-lg font-semibold text-pink-500'>Price: 420</h2>
+                            <h2 className='text-lg font-semibold text-pink-500'>Price: {price}</h2>
                         </div>
                         <div className='flex justify-center'>
                             <FaStar className='mr-2 text-yellow-400 text-base' />
@@ -31,7 +31,7 @@ const SingleCourse = ({ course }) => {
                 <div className="card-actions w-full">
 
                     <Link className='w-full' to={`/courses/${_id}`}>
-                        <button className="btn btn-success w-full">Show Details</button>
+                        <button className="btn btn-primary w-full">Show Details</button>
                     </Link>
 
                 </div>

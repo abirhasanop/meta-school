@@ -1,51 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Category from "../Category/Category";
 // import CommentCard from "./CommentCard/CommentCard";
 
 const CourseDetails = () => {
     const lodedCourse = useLoaderData()
-    const course = {
-        _id: "0282e0e58a5c404fbd15261f11c2ab6b",
-        name: "Data Science Fundamental Course",
-        category_id: "03",
-        category_name: "Data Science",
-        rating: {
-            number: 4.5,
-            badge: "Excellent",
-            total: "25",
-        },
-        total_view: 488,
-        published_date: "2022-08-24 17:27:34",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtMz-TXof73PLOzZSPj1wSh4J2gLUNM4-xVg&usqp=CAU",
-        description:
-            "Data science is an interdisciplinary field[8] focused on extracting knowledge from typically large data sets and applying the knowledge and insights from that data to solve problems in a wide range of application domains.[9] The field encompasses preparing data for analysis, formulating data science problems, analyzing data, developing data-driven solutions, and presenting findings to inform high-level decisions in a broad range of application domains. As such, it incorporates skills from computer science, statistics, information science, mathematics, data visualization, information visualization, data sonification, data integration, graphic design, complex systems, communication and business.[10][11] Statistician Nathan Yau, drawing on Ben Fry, also links data science to human–computer interaction: users should be able to intuitively control and explore data.[12][13] In 2015, the American Statistical Association identified database management, statistics and machine learning, and distributed and parallel systems as the three emerging foundational professional communities.[14] Many statisticians, including Nate Silver, have argued that data science is not a new field, but rather another name for statistics.[15] Others argue that data science is distinct from statistics because it focuses on problems and techniques unique to digital data.[16] Vasant Dhar writes that statistics emphasizes quantitative data and description. In contrast, data science deals with quantitative and qualitative data (e.g. from images, text, sensors, transactions or customer information, etc) and emphasizes prediction and action.[17] Andrew Gelman of Columbia University has described statistics as a nonessential part of data science.[18] Stanford professor David Donoho writes that data science is not distinguished from statistics by the size of datasets or use of computing and that many graduate programs misleadingly advertise their analytics and statistics training as the essence of a data-science program. He describes data science as an applied field growing out of traditional statistics.[19]",
-        instructor: {
-            name: "Mosharrof Hosen Munna",
-            profile: "https://placeimg.com/192/192/people",
-            update: "July 24, 2022",
-            star: "4.5",
-        },
-        reviews: [
-            {
-                name: "Eleanor Fant",
-                profile: "https://placeimg.com/192/192/people",
-                comment:
-                    "So I said lurgy dropped a clanger Jeffrey bugger cuppa gosh David blatant have it, standard A bit of how's your father my lady absolutely.",
-                date: "July 14, 2022",
-                rating: "4",
-            },
-            {
-                name: "Shahnewaz Sakil",
-                profile: "https://placeimg.com/192/192/people",
-                comment:
-                    "David blatant have it, standard A bit of how's your father my lady absolutely.",
-                date: "July 14, 2022",
-                rating: "4",
-            },
-        ],
-    };
+    console.log(lodedCourse);
+
 
 
     const [categories, setCategories] = useState([])
@@ -68,13 +30,15 @@ const CourseDetails = () => {
             <section>
                 <div className="flex justify-between mb-4">
                     <h1 className="text-3xl font-semibold text-primary">{lodedCourse.name}</h1>
-                    <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md">
-                        Chekout
-                    </button>
+                    <Link to={`/checkout/${lodedCourse._id}`}>
+                        <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md">
+                            Chekout
+                        </button>
+                    </Link>
                 </div>
                 {/* course thumbnail */}
                 <div>
-                    <img className="w-full" src={course.img} alt="" />
+                    <img className="w-full" src={lodedCourse.img} alt="" />
                 </div>
                 {/* course info */}
                 <div className="flex justify-between items-center">
@@ -106,14 +70,16 @@ const CourseDetails = () => {
                 </div>
                 {/* course description */}
                 <div className="text-lg leading-8	 mb-8">
-                    {course.description.slice(0, 350)} <br /> <br />{" "}
-                    {course.description.slice(350, 700)} <br /> <br />{" "}
-                    {course.description.slice(700)}
+                    {lodedCourse.description.slice(0, 350)} <br /> <br />{" "}
+                    {lodedCourse.description.slice(350, 700)} <br /> <br />{" "}
+                    {lodedCourse.description.slice(700)}
                 </div>
                 <div className="flex justify-end">
-                    <button className="btn  btn-primary btn-md font-bold shadow-md">
-                        Chekout Course{" "}
-                    </button>
+                    <Link to={`/checkout/${lodedCourse._id}`}>
+                        <button className="btn  btn-primary btn-md font-bold shadow-md">
+                            Chekout Now
+                        </button>
+                    </Link>
                 </div>
                 {/* reviews and comment */}
                 <div>
@@ -121,7 +87,7 @@ const CourseDetails = () => {
                         <h1 className="text-3xl text-primary font-semibold mb-4">Reviews</h1>
                         <div className="flex justify-between items-center">
                             <h5 className="text-xl font-semibold ">
-                                Badge: {course.rating.badge}
+                                Badge: {lodedCourse.rating.badge}
                             </h5>
                             <div className="flex items-center text-rose-600">
                                 <div className="text-xl font-semibold text-black">Rating: </div>
@@ -131,11 +97,11 @@ const CourseDetails = () => {
                                 <FaStar />
                                 <FaStar />
                                 <span className="text-black font-semibold">
-                                    ({course.rating.number})
+                                    ({lodedCourse.rating.number})
                                 </span>
                             </div>
                             <h5 className="text-xl font-semibold ">
-                                Total Reviews: {course.rating.total}
+                                Total Reviews: {lodedCourse.total_view}
                             </h5>
                         </div>
                     </div>

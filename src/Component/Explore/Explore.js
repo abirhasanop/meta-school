@@ -3,6 +3,7 @@ import CategoryCard from "../CategoryCard/CategoryCard";
 import { FaDatabase, FaBusinessTime, FaArtstation, FaSmile } from "react-icons/fa";
 
 
+
 const Explore = () => {
     const data = [
         {
@@ -84,7 +85,7 @@ const Explore = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {
                         data.map((c) => {
-                            return <CategoryCard category={c}>{c.icon}</CategoryCard>
+                            return <CategoryCard key={c.id} category={c}>{c.icon}</CategoryCard>
                         })
                     }
 
