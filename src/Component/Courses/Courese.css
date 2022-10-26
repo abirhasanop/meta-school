@@ -7,3 +7,15 @@
 .my-categories {
     height: 25rem;
 }
+
+.courese-container {
+    display: block;
+}
+
+@media screen and (min-width: 992px) {
+    .courese-container {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        gap: 10px;
+    }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import { FaDatabase, FaBusinessTime, FaArtstation, FaSmile } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
@@ -80,9 +81,9 @@ const Explore = () => {
                         <span className="text-primary mb-4 inline-block"> Explore</span> <br />
                         Our Popular Courses
                     </h1>
-                    <div className="text-lg font-semibold cursor-pointer hover:text-primary duration-300">View all Category</div>
+                    <Link to='/courses' className="text-lg font-semibold cursor-pointer hover:text-primary duration-300">View all Category</Link>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {
                         data.map((c) => {
                             return <CategoryCard key={c.id} category={c}>{c.icon}</CategoryCard>

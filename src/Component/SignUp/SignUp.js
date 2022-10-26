@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const { createUserWithEmail, googleSignIn } = useContext(AuthContext)
@@ -68,6 +68,11 @@ const SignUp = () => {
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" />
                                 <label className="label">
                                     <p href="#" className="label-text-alt link link-hover">Forgot password?</p>
+                                </label>
+                                <label className="label">
+                                    <p href="#" className="label-text-alt link link-hover">
+                                        <Link to='/login'>Already have an account? Login</Link>
+                                    </p>
                                 </label>
 
                             </div>

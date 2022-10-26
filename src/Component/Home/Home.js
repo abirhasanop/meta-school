@@ -7,6 +7,7 @@ import headerImg from '../../Assets/Images/header-img.png'
 import './Home.css'
 import Explore from '../Explore/Explore';
 import Footer from '../Footer/Footer';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -14,22 +15,26 @@ const Home = () => {
         <div>
             <section className="py-24 px-4" >
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 g-4">
+                    <div className="grid grid-cols-1  md:grid-cols-2 g-4">
                         <div className="flex items-center">
                             <div>
-                                <div className="text-6xl">
+                                <div className="text-6xl  text-center lg:text-left ">
                                     Access 2700+ <br />{" "}
                                     <span className="font-bold">
                                         Online Tutorial From Top Instructor.
                                     </span>
                                 </div>
-                                <p className="text-2xl my-8">
+                                <p className="text-2xl text-center lg:text-left my-8">
                                     Meet university,and cultural institutions, who'll share their
                                     experience.
                                 </p>
-                                <button className="btn btn-primary btn-lg">
-                                    View All Courses
-                                </button>
+                                <div className='flex justify-center lg:justify-start'>
+                                    <Link to='/courses'>
+                                        <button className="btn btn-primary btn-lg">
+                                            View All Courses
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                         <div className="mx-auto text-center">
@@ -42,7 +47,7 @@ const Home = () => {
             <Explore />
 
 
-            <section className='w-1/2 mx-auto mb-10 flex gap-5'>
+            <section className='w-1/2 mx-auto mb-10 flex flex-col lg:flex-row gap-5'>
                 <section className='my-clasroom flex justify-between items-center p-10 rounded-2xl' style={{ backgroundImage: `url(${banner1})` }}>
                     <div>
                         <div className='bg-pink-500 w-12 text-white rounded-full text-center'>
@@ -68,7 +73,7 @@ const Home = () => {
                     </div>
                 </section>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
