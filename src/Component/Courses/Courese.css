@@ -1,0 +1,9 @@
+.courese-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 10px;
+}
+
+.my-categories {
+    height: 25rem;
+}
