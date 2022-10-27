@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div className='bg-slate-100'>
+        <div className='bg-slate-100 mt-14'>
             <section className="py-24 px-4" >
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1  md:grid-cols-2 g-4">
