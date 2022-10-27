@@ -78,8 +78,8 @@ const Explore = () => {
             <div className="container mx-auto">
                 <div className="flex justify-between items-center mb-12">
                     <h1 className="text-5xl font-bold">
-                        <span className="text-primary mb-4 inline-block"> Explore</span> <br />
-                        Our Popular Courses
+                        <span className="text-primary mb-4 inline-block"> Our</span> <br />
+                        Upcomming Courses
                     </h1>
                     <Link to='/courses' className="text-lg font-semibold cursor-pointer hover:text-primary duration-300">View all Category</Link>
                 </div>

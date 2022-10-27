@@ -53,8 +53,12 @@ const Home = () => {
                         <div className='bg-pink-500 w-12 text-white rounded-full text-center'>
                             <p>free</p>
                         </div>
-                        <h1>Feel Free To enroll our latest free courses for Limited times only</h1>
-                        <button className='btn btn-primary'>View Courses</button>
+                        <h1 className='text-xl mb-3'>Feel Free To enroll our latest free courses for Limited times only</h1>
+                        <Link to='/courses'>
+                            <button className="btn btn-primary">
+                                View All Courses
+                            </button>
+                        </Link>
                     </div>
                     <div>
                         <img src={img2} alt="" />
@@ -65,8 +69,12 @@ const Home = () => {
                         <div className='bg-orange-600 w-12 text-white rounded-full text-center'>
                             <p>new</p>
                         </div>
-                        <h1>Enroll Our Latest Courses Created By One Of The Best Teacher's</h1>
-                        <button className='btn btn-primary'>Find Our More</button>
+                        <h1 className='text-xl mb-3'>Enroll Our Latest Courses Created By One Of The Best Teacher's</h1>
+                        <Link to='/courses'>
+                            <button className="btn btn-primary">
+                                View All Courses
+                            </button>
+                        </Link>
                     </div>
                     <div>
                         <img src={img1} alt="" />

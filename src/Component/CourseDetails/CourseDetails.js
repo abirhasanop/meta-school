@@ -4,10 +4,13 @@ import { FaStar } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import Category from "../Category/Category";
 // import CommentCard from "./CommentCard/CommentCard";
+import ReactToPdf from 'react-to-pdf'
 
 const CourseDetails = () => {
     const lodedCourse = useLoaderData()
     console.log(lodedCourse);
+
+    const ref = React.createRef();
 
 
 
@@ -36,7 +39,7 @@ const CourseDetails = () => {
                 }
             </div>
             {/* course header */}
-            <section>
+            <section ref={ref}>
                 <div className="flex justify-between mb-4">
                     <h1 className="text-3xl font-semibold text-primary">{lodedCourse.name}</h1>
                     <Link to={`/checkout/${lodedCourse._id}`}>
@@ -44,6 +47,12 @@ const CourseDetails = () => {
                             Chekout
                         </button>
                     </Link>
+                    <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                        {({ toPdf }) => (
+                            <button onClick={toPdf}>Generate pdf</button>
+                        )}
+                    </ReactToPdf>
+
                 </div>
                 {/* course thumbnail */}
                 <div>
