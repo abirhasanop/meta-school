@@ -36,7 +36,7 @@ const CheckOut = () => {
                 }
             </section>
             <section className='bg-white'>
-                <div className='flex justify-between pr-24'>
+                <div className='lg:flex justify-between pr-24'>
                     <div>
                         <img style={{ width: "600px" }} src={img} alt="" />
                     </div>
