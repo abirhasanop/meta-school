@@ -1,10 +1,10 @@
 # STUDY CARE
 
-This application will provide Premium quality courses in the world. You can learn by online courses, get extra benifits from course
+This application is about premimum courses With attractive design and fast loading
 
-Our goal is to premium quality courses for our student by their requirements
+Our goal is to provide  value and result for our student by their requirements
 
-## Technology stack used in this application
+## Technology we used for this application
 
 - [x] JavaScript
 - [x] React
@@ -14,18 +14,19 @@ Our goal is to premium quality courses for our student by their requirements
 - [x] React-Router
 - [x] React-to-pdf
 
-## To run this application you need follow below steps
+## Follow these steps to run the application
 
 Clone the application from github using this link:
 
-
-- [x] https://github.com/programming-hero-web-course2/b6-quiz-crackerz-Mosharrof-Hosen-Munna
+- [x] https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-abirhasanop
 
 Live Website Link: 
 
-- [x] https://whimsical-llama-37a27f.netlify.app/
+- [x] https://assignment-10-d5ca4.web.app/
 From the project directory run: -
 
+Server Link: 
+- [x] https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-abirhasanop
 
 - [x] npm install.
   > Once the node_modules installed -
