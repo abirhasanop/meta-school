@@ -8,7 +8,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     return (
         <nav className='bg-white shadow-xl mb-24 h-24 flex items-center'>
-            <div className="navbar container mx-auto flex flex-col lg:flex-row">
+            <div className="navbar lg:container mx-auto flex flex-col lg:flex-row">
                 <div className="flex-1">
                     <Link to="/" className="btn btn-ghost normal-case text-4xl"><FaHive className='mr-1 text-indigo-600' /> Meta  <span className='text-indigo-600'> School</span></Link>
                 </div>
@@ -37,7 +37,7 @@ const Header = () => {
                                     <img className='rounded-full' style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="" />
                                 </div>
                                 :
-                                <FaUser />
+                                <FaUser className='hidden lg:block' />
                         }
                         {/* <div className="tooltip tooltip-bottom tooltip-success flex items-center" data-tip={`${user?.displayName}`}>
                             {
@@ -47,7 +47,7 @@ const Header = () => {
                                     <FaUser />
                             }
                         </div> */}
-                        <input type="checkbox" className="toggle ml-3" />
+                        <input type="checkbox" className="toggle ml-3 hidden lg:block" />
                     </ul>
                 </div>
             </div>

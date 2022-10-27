@@ -22,7 +22,7 @@ const CategoryCourses = () => {
                     categories.map(category => <Category key={category.id} category={category} />)
                 }
             </div>
-            <div className='grid grid-cols-3'>
+            <div className='mx-auto w-11/12 md:w-3/5 lg:w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'>
                 {
                     allCategoryCourses.map(courses => <SingleCourse key={courses.id} course={courses} />)
                 }
