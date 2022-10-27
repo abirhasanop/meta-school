@@ -6,7 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const { createUserWithEmail, googleSignIn, varifyEmailPass } = useContext(AuthContext)
+    const { createUserWithEmail, googleSignIn, varifyEmailPass, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -16,15 +16,19 @@ const SignUp = () => {
         event.preventDefault()
         const form = event.target
         const name = form.name.value
+        const photoURL = form.photoURL.value
         const email = form.email.value
         const password = form.password.value
-        console.log(name, email, password)
+        // console.log(name, email, password)
 
+
+        // Email sing up
         createUserWithEmail(email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
                 navigate(from, { replace: true })
+                handleUpdateUser(name, photoURL)
                 toast.success("Check Your Email To Verify")
             })
             .catch(e => console.error(e))
@@ -33,6 +37,16 @@ const SignUp = () => {
             .then(() => {
 
             })
+            .catch(e => console.error(e))
+    }
+
+    const handleUpdateUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
             .catch(e => console.error(e))
     }
 
@@ -62,6 +76,12 @@ const SignUp = () => {
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input name='name' type="text" placeholder="Name" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo Url</span>
+                                </label>
+                                <input name='photoURL' type="text" placeholder="Photo Url" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaStar } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import Category from "../Category/Category";
@@ -18,6 +19,14 @@ const CourseDetails = () => {
             .then(data => setCategories(data))
 
     }, [])
+
+
+    const handleSubmitReview = (event) => {
+        event.preventDefault()
+        const form = event.target
+        form.reset()
+        toast.success("Your Comment is under review")
+    }
 
     return (
         <div className="container mx-auto courese-container mt-10">
@@ -119,7 +128,7 @@ const CourseDetails = () => {
                 <div>
                     <h1 className="text-3xl text-primary my-8 font-semibold">Write a Review</h1>
 
-                    <div>
+                    <form onSubmit={handleSubmitReview}>
                         <div className="grid grid-cols-2">
                             <div>
                                 <input
@@ -142,7 +151,7 @@ const CourseDetails = () => {
                         <div className="flex justify-end">
                             <button className="btn btn-primary">Submit Review</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </section>
         </div>
