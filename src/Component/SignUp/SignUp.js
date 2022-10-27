@@ -34,6 +34,8 @@ const SignUp = () => {
                 console.log(user)
                 navigate(from, { replace: true })
                 handleUpdateUser(name, photoURL)
+                handleEmailVerification()
+                toast.success("Account Created")
                 toast.success("Check Your Email To Verify")
             })
             .catch(e => {
@@ -41,6 +43,10 @@ const SignUp = () => {
                 toast.error(e.message)
             })
 
+
+    }
+
+    const handleEmailVerification = () => {
         varifyEmailPass()
             .then(() => {
 
@@ -99,7 +105,7 @@ const SignUp = () => {
 
 
     return (
-        <div className='bg-slate-100 hero'>
+        <div className='bg-slate-100 mt-14 hero'>
             <div className="hero-content flex-col">
                 <div className="text-center">
                     <h1 className="text-5xl font-bold">Sign Up now!</h1>
@@ -130,9 +136,6 @@ const SignUp = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <p href="#" className="label-text-alt link link-hover">Forgot password?</p>
-                                </label>
                                 <label className="label">
                                     <p href="#" className="label-text-alt link link-hover">
                                         <Link to='/login'>Already have an account? Login</Link>

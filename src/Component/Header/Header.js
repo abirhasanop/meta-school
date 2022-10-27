@@ -7,7 +7,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     return (
-        <nav className='bg-white shadow-xl mb-24 h-24 flex items-center'>
+        <nav className='bg-white shadow-xl h-24 flex items-center'>
             <div className="navbar lg:container mx-auto flex flex-col lg:flex-row">
                 <div className="flex-1">
                     <Link to="/" className="btn btn-ghost normal-case text-4xl"><FaHive className='mr-1 text-indigo-600' /> Meta  <span className='text-indigo-600'> School</span></Link>

@@ -38,35 +38,36 @@ const CourseDetails = () => {
     }
 
     return (
-        <div className="container mx-auto courese-container mt-10">
-            <div className='my-categories bg-white rounded-xl'>
-                {
-                    categories.map(category => <Category key={category.id} category={category} />)
-                }
-            </div>
-            {/* course header */}
-            <section ref={ref}>
-                <div className="flex justify-between mb-4">
-                    <h1 className="text-3xl font-semibold text-primary">{lodedCourse.name}</h1>
-                    {/* <Link to={`/checkout/${lodedCourse._id}`}>
+        <div className="bg-slate-100">
+            <div className="container mx-auto courese-container mt-10">
+                <div className='my-categories bg-white rounded-xl'>
+                    {
+                        categories.map(category => <Category key={category.id} category={category} />)
+                    }
+                </div>
+                {/* course header */}
+                <section ref={ref}>
+                    <div className="flex justify-between mb-4">
+                        <h1 className="text-3xl font-semibold text-primary">{lodedCourse.name}</h1>
+                        {/* <Link to={`/checkout/${lodedCourse._id}`}>
                         <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md">
                             Chekout
                         </button>
                     </Link> */}
-                    <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={150} y={20} scale={0.8}>
-                        {({ toPdf }) => (
-                            <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md" onClick={toPdf}>Generate pdf</button>
-                        )}
-                    </ReactToPdf>
+                        <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={150} y={20} scale={0.8}>
+                            {({ toPdf }) => (
+                                <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md" onClick={toPdf}>Generate pdf</button>
+                            )}
+                        </ReactToPdf>
 
-                </div>
-                {/* course thumbnail */}
-                <div>
-                    <img className="w-full" src={lodedCourse.img} alt="" />
-                </div>
-                {/* course info */}
-                <div className="flex justify-between items-center">
-                    {/* <div className="my-8 flex items-center">
+                    </div>
+                    {/* course thumbnail */}
+                    <div>
+                        <img className="w-full" src={lodedCourse.img} alt="" />
+                    </div>
+                    {/* course info */}
+                    <div className="flex justify-between items-center">
+                        {/* <div className="my-8 flex items-center">
                         <div className="avatar mr-4 ">
                             <div className="w-14 rounded-full">
                                 <img src={lodedCourse.img} alt='' />
@@ -77,44 +78,10 @@ const CourseDetails = () => {
                             <h4 className="text-xl font-bold">{course.instructor.name}</h4>
                         </div>
                     </div> */}
-                    {/* rating */}
-                    <div>
-                        <h5 className="text-lg font-semibold ">Instructor Rating: </h5>
-                        <div className="flex items-center text-rose-600">
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <span className="text-black font-semibold">
-                                ({lodedCourse.rating.number})
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                {/* course description */}
-                <div className="text-lg leading-8	 mb-8">
-                    {lodedCourse.description.slice(0, 350)} <br /> <br />{" "}
-                    {lodedCourse.description.slice(350, 700)} <br /> <br />{" "}
-                    {lodedCourse.description.slice(700)}
-                </div>
-                <div className="flex justify-end">
-                    <Link to={`/checkout/${lodedCourse._id}`}>
-                        <button className="btn  btn-primary btn-md font-bold shadow-md">
-                            Get Premium Acces
-                        </button>
-                    </Link>
-                </div>
-                {/* reviews and comment */}
-                <div>
-                    <div>
-                        <h1 className="text-3xl text-primary font-semibold mb-4">Reviews</h1>
-                        <div className="flex justify-between items-center">
-                            <h5 className="text-xl font-semibold ">
-                                Badge: {lodedCourse.rating.badge}
-                            </h5>
+                        {/* rating */}
+                        <div>
+                            <h5 className="text-lg font-semibold ">Instructor Rating: </h5>
                             <div className="flex items-center text-rose-600">
-                                <div className="text-xl font-semibold text-black">Rating: </div>
                                 <FaStar />
                                 <FaStar />
                                 <FaStar />
@@ -124,13 +91,47 @@ const CourseDetails = () => {
                                     ({lodedCourse.rating.number})
                                 </span>
                             </div>
-                            <h5 className="text-xl font-semibold ">
-                                Total Reviews: {lodedCourse.total_view}
-                            </h5>
                         </div>
                     </div>
+                    {/* course description */}
+                    <div className="text-lg leading-8	 mb-8">
+                        {lodedCourse.description.slice(0, 350)} <br /> <br />{" "}
+                        {lodedCourse.description.slice(350, 700)} <br /> <br />{" "}
+                        {lodedCourse.description.slice(700)}
+                    </div>
+                    <div className="flex justify-end">
+                        <Link to={`/checkout/${lodedCourse._id}`}>
+                            <button className="btn  btn-primary btn-md font-bold shadow-md">
+                                Get Premium Acces
+                            </button>
+                        </Link>
+                    </div>
+                    {/* reviews and comment */}
+                    <div>
+                        <div>
+                            <h1 className="text-3xl text-primary font-semibold mb-4">Reviews</h1>
+                            <div className="flex justify-between items-center">
+                                <h5 className="text-xl font-semibold ">
+                                    Badge: {lodedCourse.rating.badge}
+                                </h5>
+                                <div className="flex items-center text-rose-600">
+                                    <div className="text-xl font-semibold text-black">Rating: </div>
+                                    <FaStar />
+                                    <FaStar />
+                                    <FaStar />
+                                    <FaStar />
+                                    <FaStar />
+                                    <span className="text-black font-semibold">
+                                        ({lodedCourse.rating.number})
+                                    </span>
+                                </div>
+                                <h5 className="text-xl font-semibold ">
+                                    Total Reviews: {lodedCourse.total_view}
+                                </h5>
+                            </div>
+                        </div>
 
-                    {/* <div>
+                        {/* <div>
                     <h1 className="text-3xl text-primary font-semibold mt-8 mb-4">
                         Comments
                     </h1>
@@ -138,37 +139,38 @@ const CourseDetails = () => {
                         return <CommentCard comment={reviews} />;
                     })}
                 </div> */}
-                </div>
-                {/* write review */}
-                <div>
-                    <h1 className="text-3xl text-primary my-8 font-semibold">Write a Review</h1>
+                    </div>
+                    {/* write review */}
+                    <div>
+                        <h1 className="text-3xl text-primary my-8 font-semibold">Write a Review</h1>
 
-                    <form onSubmit={handleSubmitReview}>
-                        <div className="grid grid-cols-2">
-                            <div>
-                                <input
-                                    type="text"
-                                    placeholder="Your Name"
-                                    className="input w-full max-w-lg  shadow"
-                                />
+                        <form onSubmit={handleSubmitReview}>
+                            <div className="grid grid-cols-2">
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Your Name"
+                                        className="input w-full max-w-lg  shadow"
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="email"
+                                        placeholder="Your Email"
+                                        className="input w-full max-w-lg shadow"
+                                    />
+                                </div>
                             </div>
-                            <div>
-                                <input
-                                    type="email"
-                                    placeholder="Your Email"
-                                    className="input w-full max-w-lg shadow"
-                                />
+                            <div className="w-full my-4">
+                                <textarea className="textarea w-full shadow" rows={8} placeholder="Write your comment"></textarea>
                             </div>
-                        </div>
-                        <div className="w-full my-4">
-                            <textarea className="textarea w-full shadow" rows={8} placeholder="Write your comment"></textarea>
-                        </div>
-                        <div className="flex justify-end">
-                            <button className="btn btn-primary">Submit Review</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
+                            <div className="flex justify-end">
+                                <button className="btn btn-primary">Submit Review</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 };

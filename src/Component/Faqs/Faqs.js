@@ -4,7 +4,7 @@ import headerImg from '../../Assets/Images/header-img.png'
 
 const Faqs = () => {
     return (
-        <div className=''>
+        <div>
             <section className="py-24 px-4" >
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1  md:grid-cols-2 g-4">
@@ -17,8 +17,7 @@ const Faqs = () => {
                                     </span>
                                 </div>
                                 <p className="text-2xl text-center lg:text-left my-8">
-                                    Meet university,and cultural institutions, who'll share their
-                                    experience.
+                                    Learn Digital Marketing Today!
                                 </p>
                                 <div className='flex justify-center lg:justify-start'>
                                     <Link to='/courses'>
@@ -67,7 +66,6 @@ const Faqs = () => {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };

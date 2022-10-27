@@ -18,11 +18,17 @@ const Login = () => {
         const password = form.password.value
         console.log(name, email, password)
 
+        if (password.length < 6) {
+            return toast.error("Password Must Have 6 Charecters")
+        }
+
+
         login(email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
                 navigate(from, { replace: true })
+                toast.success("Login Succesfull")
             })
             .catch(e => {
                 console.error(e)
@@ -39,6 +45,7 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 navigate(from, { replace: true })
+                toast.success("Login Succesfull")
             })
             .catch(e => {
                 console.error(e)
@@ -66,7 +73,7 @@ const Login = () => {
     }
 
     return (
-        <div className='h-screen hero'>
+        <div className='mt-14 hero'>
             <div className="hero-content flex-col">
                 <div className="text-center">
                     <h1 className="text-5xl font-bold">Login Now!</h1>
@@ -87,9 +94,6 @@ const Login = () => {
                                 </label>
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" />
                                 <div>
-                                    <label className="label">
-                                        <p href="#" className="label-text-alt link link-hover">Forgot password?</p>
-                                    </label>
                                     <label className="label">
                                         <p href="#" className="label-text-alt link link-hover">
                                             <Link to='/signup'>New here? Sign Up</Link>
