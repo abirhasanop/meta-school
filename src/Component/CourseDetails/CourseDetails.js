@@ -12,6 +12,12 @@ const CourseDetails = () => {
 
     const ref = React.createRef();
 
+    const options = {
+        // orientation: 'landscape',
+        // unit: 'in',
+        format: "a1"
+    };
+
 
 
     const [categories, setCategories] = useState([])
@@ -42,14 +48,14 @@ const CourseDetails = () => {
             <section ref={ref}>
                 <div className="flex justify-between mb-4">
                     <h1 className="text-3xl font-semibold text-primary">{lodedCourse.name}</h1>
-                    <Link to={`/checkout/${lodedCourse._id}`}>
+                    {/* <Link to={`/checkout/${lodedCourse._id}`}>
                         <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md">
                             Chekout
                         </button>
-                    </Link>
-                    <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                    </Link> */}
+                    <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={150} y={20} scale={0.8}>
                         {({ toPdf }) => (
-                            <button onClick={toPdf}>Generate pdf</button>
+                            <button className="btn btn-outline btn-primary btn-sm font-bold shadow-md" onClick={toPdf}>Generate pdf</button>
                         )}
                     </ReactToPdf>
 

@@ -31,16 +31,23 @@ const Header = () => {
                                     <li><Link to="/signup">Sign Up</Link></li>
                                 </>
                         }
-                        <div className="tooltip tooltip-bottom tooltip-success flex items-center" data-tip={`${user?.displayName}`}>
+                        {
+                            user?.photoURL ?
+                                <div className="tooltip tooltip-bottom tooltip-success flex items-center" data-tip={`${user?.displayName}`}>
+                                    <img className='rounded-full' style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="" />
+                                </div>
+                                :
+                                <FaUser />
+                        }
+                        {/* <div className="tooltip tooltip-bottom tooltip-success flex items-center" data-tip={`${user?.displayName}`}>
                             {
                                 user?.photoURL ?
                                     <img className='rounded-full' style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="" />
                                     :
                                     <FaUser />
                             }
-
-                        </div>
-
+                        </div> */}
+                        <input type="checkbox" className="toggle ml-3" />
                     </ul>
                 </div>
             </div>

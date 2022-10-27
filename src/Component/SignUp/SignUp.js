@@ -31,13 +31,19 @@ const SignUp = () => {
                 handleUpdateUser(name, photoURL)
                 toast.success("Check Your Email To Verify")
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                toast.error(e.message)
+            })
 
         varifyEmailPass()
             .then(() => {
 
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                toast.error(e.message)
+            })
     }
 
     const handleUpdateUser = (name, photoURL) => {
@@ -47,7 +53,10 @@ const SignUp = () => {
         }
         updateUserProfile(profile)
             .then(() => { })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                toast.error(e.message)
+            })
     }
 
     // Google Sign In
