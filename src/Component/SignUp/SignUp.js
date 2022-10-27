@@ -6,7 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const { createUserWithEmail, googleSignIn, varifyEmailPass, updateUserProfile } = useContext(AuthContext)
+    const { createUserWithEmail, googleSignIn, varifyEmailPass, updateUserProfile, gitHubSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -55,7 +55,8 @@ const SignUp = () => {
             .then(() => { })
             .catch(e => {
                 console.error(e)
-                toast.error(e.message)
+                const eMessage = e.message.slice()
+                toast.error(eMessage)
             })
     }
 
@@ -66,8 +67,29 @@ const SignUp = () => {
                 const user = result.user
                 console.log(user)
                 navigate(from, { replace: true })
+                toast.success("Login Succesfull")
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                const eMessage = e.message.slice()
+                toast.error(eMessage)
+            })
+    }
+
+    // gitHub submit
+    const handleGitHubSubmit = () => {
+        gitHubSignIn()
+            .then((result) => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true })
+                toast.success("Login Succesfull")
+            })
+            .catch(e => {
+                console.error(e)
+                const eMessage = e.message.slice()
+                toast.error(eMessage)
+            })
     }
 
 

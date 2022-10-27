@@ -4,6 +4,7 @@ import CategoryCourses from "../Component/CategoryCourses/CategoryCourses";
 import CheckOut from "../Component/CheckOut/CheckOut";
 import CourseDetails from "../Component/CourseDetails/CourseDetails";
 import Courses from "../Component/Courses/Courses";
+import ErrorPage from "../Component/Error/ErrorPage";
 import Faqs from "../Component/Faqs/Faqs";
 import Home from "../Component/Home/Home";
 import Login from "../Component/Login/Login";
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: '*',
+                element: <ErrorPage />
             },
             {
                 path: '/home',

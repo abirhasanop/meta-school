@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const { login, googleSignIn } = useContext(AuthContext)
@@ -23,7 +24,11 @@ const Login = () => {
                 console.log(user)
                 navigate(from, { replace: true })
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                const eMessage = e.message.slice()
+                toast.error(eMessage)
+            })
     }
 
 
@@ -35,7 +40,11 @@ const Login = () => {
                 console.log(user)
                 navigate(from, { replace: true })
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                const eMessage = e.message.slice()
+                toast.error(eMessage)
+            })
     }
 
     return (
