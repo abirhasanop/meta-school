@@ -11,7 +11,7 @@ const Courses = () => {
     const allCourse = useLoaderData()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/course-category`)
+        fetch(`https://assignment10-server-one.vercel.app/course-category`)
             .then(res => res.json())
             .then(data => setCategories(data))
 

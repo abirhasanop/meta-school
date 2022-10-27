@@ -22,6 +22,11 @@ const SignUp = () => {
         // console.log(name, email, password)
 
 
+        // validation
+        if (password.length < 6) {
+            return toast.error("Password Must Have 6 Charecters")
+        }
+
         // Email sing up
         createUserWithEmail(email, password)
             .then(result => {
@@ -142,7 +147,7 @@ const SignUp = () => {
                         </form>
                         <div>
                             <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success w-full mb-2"><FaGoogle /> Sign In With Google</button>
-                            <button className="btn btn-outline w-full"><FaGithub /> Sign In With GitHub</button>
+                            <button onClick={handleGitHubSubmit} className="btn btn-outline w-full"><FaGithub /> Sign In With GitHub</button>
                         </div>
                     </div>
                 </div>

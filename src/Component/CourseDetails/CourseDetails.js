@@ -23,7 +23,7 @@ const CourseDetails = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/course-category`)
+        fetch(`https://assignment10-server-one.vercel.app/course-category`)
             .then(res => res.json())
             .then(data => setCategories(data))
 
@@ -101,7 +101,7 @@ const CourseDetails = () => {
                 <div className="flex justify-end">
                     <Link to={`/checkout/${lodedCourse._id}`}>
                         <button className="btn  btn-primary btn-md font-bold shadow-md">
-                            Chekout Now
+                            Get Premium Acces
                         </button>
                     </Link>
                 </div>

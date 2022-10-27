@@ -5,7 +5,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import toast from 'react-hot-toast';
 
 const Login = () => {
-    const { login, googleSignIn } = useContext(AuthContext)
+    const { login, googleSignIn, gitHubSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
@@ -39,6 +39,24 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 navigate(from, { replace: true })
+            })
+            .catch(e => {
+                console.error(e)
+                const eMessage = e.message.slice()
+                toast.error(eMessage)
+            })
+    }
+
+
+
+    // gitHub submit
+    const handleGitHubSubmit = () => {
+        gitHubSignIn()
+            .then((result) => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true })
+                toast.success("Login Succesfull")
             })
             .catch(e => {
                 console.error(e)
@@ -88,7 +106,7 @@ const Login = () => {
                             </div>
                         </form>
                         <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success w-full mb-2"><FaGoogle /> Sign In With Google</button>
-                        <button className="btn btn-outline w-full"><FaGithub /> Sign In With GitHub</button>
+                        <button onClick={handleGitHubSubmit} className="btn btn-outline w-full"><FaGithub /> Sign In With GitHub</button>
                     </div>
                 </div>
             </div>
