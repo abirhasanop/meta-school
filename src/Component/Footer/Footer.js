@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -91,16 +92,16 @@ const Footer = () => {
                                 Premium Courses
                             </h6>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">Google ads</a>
+                                <Link to='/courses' className="text-gray-600">Google ads</Link>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">SEO</a>
+                                <Link to='/courses' className="text-gray-600">SEO</Link>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">Facebook Ads</a>
+                                <Link to='/courses' className="text-gray-600">Facebook Ads</Link>
                             </p>
                             <p>
-                                <a href="#!" className="text-gray-600">Social Media markeitng</a>
+                                <Link to='/courses' className="text-gray-600">Social Media markeitng</Link>
                             </p>
                         </div>
                         <div className="">
