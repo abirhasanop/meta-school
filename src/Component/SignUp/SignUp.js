@@ -3,9 +3,10 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const { createUserWithEmail, googleSignIn } = useContext(AuthContext)
+    const { createUserWithEmail, googleSignIn, varifyEmailPass } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -24,6 +25,13 @@ const SignUp = () => {
                 const user = result.user
                 console.log(user)
                 navigate(from, { replace: true })
+                toast.success("Check Your Email To Verify")
+            })
+            .catch(e => console.error(e))
+
+        varifyEmailPass()
+            .then(() => {
+
             })
             .catch(e => console.error(e))
     }
