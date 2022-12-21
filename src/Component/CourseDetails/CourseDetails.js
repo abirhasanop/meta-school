@@ -102,7 +102,7 @@ const CourseDetails = () => {
                     <div className="flex justify-end">
                         <Link to={`/checkout/${lodedCourse._id}`}>
                             <button className="btn  btn-primary btn-md font-bold shadow-md">
-                                Get Premium Acces
+                                Get Premium Access
                             </button>
                         </Link>
                     </div>

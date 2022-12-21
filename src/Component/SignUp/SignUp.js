@@ -1,9 +1,10 @@
 import React from 'react';
 import { useContext } from 'react';
-import { AuthContext } from '../../Contexts/AuthProvider';
+
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { createUserWithEmail, googleSignIn, varifyEmailPass, updateUserProfile, gitHubSignIn } = useContext(AuthContext)

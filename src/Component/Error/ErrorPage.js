@@ -9,7 +9,7 @@ const ErrorPage = () => {
                 Page Not Found
             </div>
             <button class="mt-5">
-                <a href='#'
+                <a href='#_'
                     class="relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-none focus:ring"
                 >
                     <span

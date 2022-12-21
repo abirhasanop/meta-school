@@ -18,7 +18,7 @@ Our goal is to provide  value and result for our student by their requirements
 
 Clone the application from github using this link:
 
-- [x] https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-abirhasanop
+- [x] 
 
 Live Website Link: 
 
@@ -26,7 +26,7 @@ Live Website Link:
 From the project directory run: -
 
 Server Link: 
-- [x] https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-abirhasanop
+- [x] 
 
 - [x] npm install.
   > Once the node_modules installed -

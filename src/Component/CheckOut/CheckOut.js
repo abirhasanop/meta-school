@@ -20,7 +20,7 @@ const CheckOut = () => {
         event.preventDefault()
         const form = event.target
         form.reset()
-        toast.success("Enrolled")
+        toast.success("Reviewing!!!!")
     }
 
 
