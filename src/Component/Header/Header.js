@@ -47,7 +47,7 @@ const Header = () => {
                                     <FaUser />
                             }
                         </div> */}
-                        <input type="checkbox" className="toggle ml-3 hidden lg:block" />
+                        {/* <input type="checkbox" className="toggle ml-3 hidden lg:block" /> */}
                     </ul>
                 </div>
             </div>

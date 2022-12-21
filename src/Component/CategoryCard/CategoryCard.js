@@ -2,7 +2,7 @@ import React from 'react'
 
 const CategoryCard = ({ children, category }) => {
     return (
-        <div className='card shadow-lg p-6 border border-gray bg-white hover:bg-primary hover:text-white duration-300 cursor-pointer'>
+        <div className='card shadow-lg p-6 border border-gray bg-white hover:bg-primary hover:text-white duration-300'>
             <div className='flex justify-start items-center'>
                 {children}
                 <div className='ml-10'>

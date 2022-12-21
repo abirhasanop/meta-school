@@ -3,12 +3,19 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Category from '../Category/Category';
+import Loder from '../Loder/Loder';
 import SingleCourse from '../SingleCourse/SingleCourse';
 import './Courese.css'
 
 const Courses = () => {
     const [categories, setCategories] = useState([])
-    const allCourse = useLoaderData()
+    const [loading, setLoading] = useState(true)
+
+    // update
+    const [allCourse, setAllcourses] = useState([])
+
+    // update
+    // const allCourse = useLoaderData()
 
     useEffect(() => {
         fetch(`https://assignment10-server-one.vercel.app/course-category`)
@@ -16,6 +23,19 @@ const Courses = () => {
             .then(data => setCategories(data))
 
     }, [])
+
+    useEffect(() => {
+        fetch(`https://assignment10-server-one.vercel.app/courses`)
+            .then(res => res.json())
+            .then(data => {
+                setAllcourses(data)
+                setLoading(false)
+            })
+    }, [])
+
+    if (loading) {
+        return <Loder />
+    }
 
     return (
         <div className='bg-slate-100'>
