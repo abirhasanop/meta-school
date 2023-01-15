@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import About from "../Component/About/About";
 import Blog from "../Component/Blog/Blog";
 import CategoryCourses from "../Component/CategoryCourses/CategoryCourses";
 import CheckOut from "../Component/CheckOut/CheckOut";
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
                 path: '/checkout/:id',
                 loader: ({ params }) => fetch(`https://assignment10-server-one.vercel.app/courses/${params.id}`),
                 element: <PrivateRoute><CheckOut /></PrivateRoute>
+            },
+            {
+                path: "/about",
+                element: <About />
             }
         ]
     }
